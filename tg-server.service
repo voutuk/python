@@ -1,0 +1,12 @@
+[Unit]
+Description=My Telegram Bot Service
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/python
+ExecStart=python3 /hello.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

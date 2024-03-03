@@ -44,4 +44,6 @@ def status_command(message):
     for i in abc:
         bot.send_message(650550237, i)
 
+
+
 bot.polling()
