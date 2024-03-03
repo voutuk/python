@@ -1,7 +1,8 @@
 import telebot
 import subprocess
 import psutil
-token = "6829754517:AAGKEhV2_PsQ99DaLPSYFPrZMXNhzCqJAdM"
+from secrets import token
+
 
 bot = telebot.TeleBot(token)
 
@@ -35,9 +36,12 @@ def status_command(message):
 
 @bot.message_handler(commands=['spam'])
 def status_command(message):
+    abc = [1, 2, 3, 4, 5, 6]
     a = 0
     while(a < 5):
         bot.send_message(650550237, a)
         a+=1
+    for i in abc:
+        bot.send_message(650550237, i)
 
 bot.polling()
