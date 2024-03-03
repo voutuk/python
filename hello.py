@@ -1,5 +1,6 @@
 import telebot
 import subprocess
+import psutil
 token = "6829754517:AAGKEhV2_PsQ99DaLPSYFPrZMXNhzCqJAdM"
 
 bot = telebot.TeleBot(token)
@@ -16,5 +17,27 @@ def execute_command(message):
     else:
          bot.send_message(message.chat.id, "!=")
     
+
+@bot.message_handler(commands=['status'])
+def status_command(message):
+    print ("/status id: ", message.chat.id)
+    tmp = ("Відсоток використання CPU: " + str(psutil.cpu_percent(interval=5.0)) + "%. ")
+    status_id = bot.reply_to(message, tmp)
+    while (True):
+        bot.edit_message_text(chat_id=message.chat.id, message_id=status_id.message_id, text=("Відсоток використання CPU: " + str(psutil.cpu_percent(interval=5.0)) + "%. "))
+
+
+@bot.message_handler(commands=['mas'])
+def status_command(message):
+    tmp = ["a", 2, 6]
+    for i in tmp:
+        bot.reply_to(message, i)
+
+@bot.message_handler(commands=['spam'])
+def status_command(message):
+    a = 0
+    while(a < 5):
+        bot.send_message(650550237, a)
+        a+=1
 
 bot.polling()
