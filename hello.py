@@ -16,7 +16,7 @@ def execute_command(message):
         except Exception as e:
             bot.reply_to(message, "An error occurred:\n" + str(e))
     else:
-         bot.send_message(message.chat.id, "!=")
+        bot.send_message(message.chat.id, "!=")
     
 
 @bot.message_handler(commands=['status'])
