@@ -36,16 +36,15 @@ response = ec2.run_instances(
 instance_id = response['Instances'][0]['InstanceId']
 
 time.sleep(5)
-instance = ec2.describe_instances(InstanceIds=[instance_id])
-public_ip = instance['Reservations'][0]['Instances'][0].get('PublicIpAddress')
+public_ip = ec2.describe_instances(InstanceIds=[instance_id])['Reservations'][0]['Instances'][0].get('PublicIpAddress')
 
-print("Public IP Address:", public_ip)
+print("Pub IP:", public_ip)
 
 time.sleep(20)
 ssh_client = paramiko.SSHClient()
 ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 ssh_client.connect(hostname=public_ip, port=22, username="ubuntu", key_filename="Step21.pem")
-stdin, stdout, stderr = ssh_client.exec_command("sudo apt update && sudo apt install awscli apache2 -y&& sudo aws s3 cp s3://voutuk/site/sign-in/ /var/www/html/ --recursive")
+stdin, stdout, stderr = ssh_client.exec_command("sudo apt update && sudo apt install awscli apache2 -y && sudo aws s3 cp s3://voutuk/site/sign-in/ /var/www/html/ --recursive")
 
 for line in stdout:
     print(line.strip('\n'))
