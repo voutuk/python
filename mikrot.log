@@ -1,0 +1,203 @@
+ 10:59:04 system,info crossfig will upgrade version 6 configuration
+ 10:59:04 system,info router rebooted
+ 10:59:05 interface,info lo link up
+ 10:59:07 interface,info ether1 link up (speed 1G, full duplex)
+ 10:59:07 interface,info ether2 link up (speed 1G, full duplex)
+ 10:59:08 system,info,account user admin logged in via local
+ 10:59:21 system,info user admin password changed by admin
+ 11:00:50 system,info address added by console:admin@tty1 (*1 = /ip address add address=10.10.13.253 interface=ether1)
+ 11:01:35 system,info address added by console:admin@tty1 (*2 = /ip address add address=10.10.13.123 interface=ether1)
+ 11:02:57 system,info address added by console:admin@tty1 (*3 = /ip address add address=10.10.13.123/24 interface=ether1)
+ 11:02:58 system,info,account user admin logged in from 10.10.13.4 via winbox
+ 11:04:10 system,info user paramko added by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (*2 = /user add address="" disabled=no group=full name=paramko)
+ 11:04:36 system,info ip service changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip service set api address="" disabled=yes port=8728 vrf=main)
+ 11:04:37 system,info ip service changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip service set api-ssl address="" certificate=none disabled=yes port=8729 tls-version=any vrf=main)
+ 11:04:39 system,info ip service changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip service set ftp address="" disabled=yes port=21)
+ 11:04:41 system,info ip service changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip service set telnet address="" disabled=yes port=23 vrf=main)
+ 11:04:43 system,info ip service changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip service set www address="" disabled=yes port=80 vrf=main)
+ 11:07:57 system,info user paramko removed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/user remove *2)
+ 11:08:10 system,info user paramiko added by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (*3 = /user add address="" disabled=no group=full name=paramiko)
+ 11:08:13 ssh,info 0bit public key imported, key-owner = step\dev@A13PC4
+ 11:09:03 system,info ip service changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip service set ssh address="" disabled=no port=2255 vrf=main)
+ 11:12:02 ssh,info publickey accepted for user: paramiko
+ 11:12:02 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:12:09 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:12:29 ssh,info publickey accepted for user: paramiko
+ 11:12:29 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:12:29 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:13:17 ssh,info publickey accepted for user: paramiko
+ 11:13:17 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:13:17 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:13:42 ssh,info publickey accepted for user: paramiko
+ 11:13:42 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:13:42 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:15:48 system,info,account user admin logged in from 10.10.13.4 via winbox
+ 11:17:25 ssh,info publickey accepted for user: paramiko
+ 11:17:25 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:17:25 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:24:01 ssh,info publickey accepted for user: paramiko
+ 11:24:01 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:24:08 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:24:31 ssh,info publickey accepted for user: paramiko
+ 11:24:31 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:24:44 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:25:02 ssh,info publickey accepted for user: paramiko
+ 11:25:02 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:25:07 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:26:17 ssh,info publickey accepted for user: paramiko
+ 11:26:17 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:30:06 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:30:11 ssh,info publickey accepted for user: paramiko
+ 11:30:11 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:30:11 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:30:42 ssh,info publickey accepted for user: paramiko
+ 11:30:42 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:30:42 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:31:03 ssh,info publickey accepted for user: paramiko
+ 11:31:03 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:31:03 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:32:01 ssh,info publickey accepted for user: paramiko
+ 11:32:01 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:32:04 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:32:16 ssh,info publickey accepted for user: paramiko
+ 11:32:16 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:32:31 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:32:50 system,info address removed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip address remove *1)
+ 11:32:52 system,info address removed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip address remove *2)
+ 11:32:56 system,info,account user admin logged out from 10.10.13.4 via winbox
+ 11:34:30 system,info,account user admin logged in from 10.10.13.4 via winbox
+ 11:35:27 system,info address removed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip address remove *3)
+ 11:35:57 system,info,account user admin logged out from 10.10.13.4 via winbox
+ 11:35:57 system,info,account user admin logged out from 10.10.13.4 via winbox
+ 11:36:02 system,info address added by console:admin@tty1 (*4 = /ip address add address=10.10.13.123/24 interface=ether1)
+ 11:36:03 system,info,account user admin logged in from 10.10.13.4 via winbox
+ 11:43:09 ssh,info publickey accepted for user: paramiko
+ 11:43:09 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:43:12 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:44:03 ssh,info publickey accepted for user: paramiko
+ 11:44:03 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:45:09 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:45:11 ssh,info publickey accepted for user: paramiko
+ 11:45:11 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:47:00 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:47:03 ssh,info publickey accepted for user: paramiko
+ 11:47:03 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:47:33 system,info,account user admin logged in from 10.10.13.4 via winbox
+ 11:48:31 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:48:33 ssh,info publickey accepted for user: paramiko
+ 11:48:33 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:48:48 system,info address added by ssh-cmd:paramiko@10.10.13.4 (*5 = /ip address add address=192.168.1.1/24 interface=ether2)
+ 11:48:55 system,info,account user admin logged out from 10.10.13.4 via winbox
+ 11:50:24 system,info route 0.0.0.0/0 added by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (*80000001 = /ip route add disabled=no dst-address=0.0.0.0/0 gateway=10.10.13.254 routing-table=main suppress-hw-offload=no)
+ 11:50:27 system,info,account user admin logged in from 10.10.13.4 via winbox
+ 11:54:26 system,info,account user admin logged out from 10.10.13.4 via winbox
+ 11:54:28 system,info route 0.0.0.0/0 removed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 ()
+ 11:55:28 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:55:29 ssh,info publickey accepted for user: paramiko
+ 11:55:29 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 11:55:43 system,info,account user admin logged in from 10.10.13.4 via winbox
+ 11:55:45 system,info,account user admin logged out from 10.10.13.4 via winbox
+ 11:56:21 system,info route 0.0.0.0/0 added by ssh-cmd:paramiko@10.10.13.4 (*80000002 = /ip route add dst-address=0.0.0.0/0 gateway=10.10.13.254)
+ 11:56:42 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 11:58:24 system,info,account user admin logged in from 10.10.13.4 via winbox
+ 11:59:56 system,info filter rule added by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4/terminal (*1 = /ip firewall filter add action=accept chain=forward)
+ 12:02:59 ssh,info publickey accepted for user: paramiko
+ 12:02:59 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 12:03:03 system,info,account user admin logged out from 10.10.13.4 via winbox
+ 12:03:05 system,info filter rule changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip firewall filter set *1 action=accept chain=forward disabled=yes log=no log-prefix="")
+ 12:03:10 system,info filter rule removed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip firewall filter remove *1)
+ 12:03:17 system,info filter rule added by ssh-cmd:paramiko@10.10.13.4 (*2 = /ip firewall filter add action=accept chain=forward)
+ 12:03:17 system,info nat rule added by ssh-cmd:paramiko@10.10.13.4 (*1 = /ip firewall nat add action=masquerade chain=srcnat)
+ 12:03:46 system,info,account user admin logged in from 10.10.13.4 via winbox
+ 12:04:03 system,info,account user admin logged out from 10.10.13.4 via winbox
+ 12:04:08 system,info,account user admin logged in from 10.10.13.4 via winbox
+ 12:04:28 system,info dns changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4/terminal (/ip dns set servers=1.1.1.1)
+ 12:04:33 system,info dns changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip dns set allow-remote-requests=no cache-max-ttl=1w cache-size=2048KiB doh-max-concurrent-queries=50 doh-max-server-connections=5 doh-timeout=5s max-concurrent-queries=100 max-concurrent-tcp-sessions=20 max-udp-packet-size=4096 query-server-timeout=2s query-total-timeout=10s servers="" use-doh-server="" verify-doh-cert=no)
+ 12:08:37 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 12:08:39 ssh,info publickey accepted for user: paramiko
+ 12:08:39 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 12:08:49 system,info,account user admin logged out from 10.10.13.4 via winbox
+ 12:08:59 system,info dns changed by ssh-cmd:paramiko@10.10.13.4 (/ip dns set servers=1.1.1.1)
+ 12:09:38 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 12:09:42 system,info,account user admin logged in from 10.10.13.4 via winbox
+ 12:10:30 ssh,info publickey accepted for user: paramiko
+ 12:10:30 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 12:11:09 system,info,account user admin logged out from 10.10.13.4 via winbox
+ 12:13:08 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 12:24:55 system,info pool dhcp_pool0 added by  (*1 = /ip pool add ranges=192.168.1.2-192.168.1.254)
+ 12:24:55 system,info dhcp network added by  (*1 = /ip dhcp-server network add address=192.168.1.0/24 gateway=192.168.1.1)
+ 12:24:55 system,info dhcp server dhcp1 added by  (*1 = /ip dhcp-server add address-pool=dhcp_pool0 disabled=no interface=ether2 lease-time=30m)
+ 12:44:50 dhcp,info dhcp1 assigned 192.168.1.254 for 08:00:27:FC:AE:2E corp-7daf24b812
+ 12:44:51 dhcp,info dhcp1 deassigned 192.168.1.254 for 08:00:27:FC:AE:2E corp-7daf24b812
+ 12:44:51 dhcp,info dhcp1 assigned 192.168.1.254 for 08:00:27:FC:AE:2E corp-7daf24b812
+ 12:46:39 system,info address list entry added by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (*1 = /ip firewall address-list add address=192.168.1.100 disabled=no list=test)
+ 12:49:06 system,info filter rule added by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (*3 = /ip firewall filter add action=drop chain=forward disabled=no log=no log-prefix="" src-address-list=test)
+ 12:49:07 system,info filter rule changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip firewall filter set *3 action=drop chain=forward disabled=no log=no log-prefix="" src-address-list=test)
+ 12:49:17 system,info address list entry changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip firewall address-list set *1 address=192.168.1.100 disabled=no list=block)
+ 12:49:24 system,info filter rule changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip firewall filter set *3 action=drop chain=forward disabled=no log=no log-prefix="" src-address-list=block)
+ 12:49:26 system,info filter rule moved by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 ()
+ 12:49:46 system,info,account user admin logged in from 10.10.13.4 via winbox
+ 12:54:52 ssh,info publickey accepted for user: paramiko
+ 12:54:52 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 12:54:59 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 12:57:12 ssh,info publickey accepted for user: paramiko
+ 12:57:12 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 12:57:18 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 12:57:20 ssh,info publickey accepted for user: paramiko
+ 12:57:20 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 12:59:03 system,info address list entry added by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4/terminal (*2 = /ip firewall address-list add address=192.168.1.254 list=block)
+ 12:59:56 system,info address list entry changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip firewall address-list set *2 address=192.168.1.254 disabled=yes list=block)
+ 13:00:12 system,info address list entry removed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip firewall address-list remove *2)
+ 13:00:13 system,info address list entry removed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip firewall address-list remove *1)
+ 13:01:58 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 13:02:19 ssh,info publickey accepted for user: paramiko
+ 13:02:19 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 13:02:30 system,info address list entry added by ssh-cmd:paramiko@10.10.13.4 (*3 = /ip firewall address-list add address=192.168.1.254 list=block)
+ 13:06:28 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 13:06:50 ssh,info publickey accepted for user: paramiko
+ 13:06:50 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 13:06:53 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 13:07:03 ssh,info publickey accepted for user: paramiko
+ 13:07:03 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 13:07:10 system,info address list entry removed by ssh-cmd:paramiko@10.10.13.4/action:0 (/ip firewall address-list remove *3)
+ 13:09:05 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 13:13:52 ssh,info publickey accepted for user: paramiko
+ 13:13:52 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 13:13:56 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 13:13:58 ssh,info publickey accepted for user: paramiko
+ 13:13:58 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 13:14:16 system,info filter rule changed by ssh-cmd:paramiko@10.10.13.4/action:1 (/ip firewall filter set *2 disabled=yes)
+ 13:14:39 system,info filter rule changed by ssh-cmd:paramiko@10.10.13.4/action:2 (/ip firewall filter set *2 disabled=yes)
+ 13:15:04 system,info filter rule changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip firewall filter set *2 action=accept chain=forward disabled=no log=no log-prefix="")
+ 13:15:12 system,info filter rule changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip firewall filter set *2 action=accept chain=forward disabled=yes log=no log-prefix="")
+ 13:15:23 system,info filter rule changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip firewall filter set *3 action=drop chain=forward disabled=yes log=no log-prefix="" src-address-list=block)
+ 13:15:40 system,info filter rule changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip firewall filter set *3 action=drop chain=forward disabled=no log=no log-prefix="" src-address-list=block)
+ 13:16:02 system,info address list entry added by ssh-cmd:paramiko@10.10.13.4 (*4 = /ip firewall address-list add address=192.168.1.254 list=block)
+ 13:16:19 system,info address list entry removed by ssh-cmd:paramiko@10.10.13.4/action:3 (/ip firewall address-list remove *4)
+ 13:16:34 system,info filter rule changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip firewall filter set *2 action=accept chain=forward disabled=no log=no log-prefix="")
+ 13:16:36 system,info nat rule changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip firewall nat set *1 action=masquerade chain=srcnat disabled=yes log=no log-prefix="")
+ 13:17:19 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 13:17:43 system,info filter rule removed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip firewall filter remove *2)
+ 13:17:48 system,info nat rule changed by winbox-3.40/tcp-msg(winbox):admin@10.10.13.4 (/ip firewall nat set *1 action=masquerade chain=srcnat disabled=no log=no log-prefix="")
+ 13:18:04 ssh,info publickey accepted for user: paramiko
+ 13:18:04 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 13:18:12 system,info nat rule changed by ssh-cmd:paramiko@10.10.13.4/action:4 (/ip firewall nat set *1 disabled=yes)
+ 13:18:54 system,info nat rule changed by ssh-cmd:paramiko@10.10.13.4/action:5 (/ip firewall nat set *1 disabled=no)
+ 13:27:04 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 13:27:07 ssh,info publickey accepted for user: paramiko
+ 13:27:07 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 13:27:08 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 13:27:38 ssh,info publickey accepted for user: paramiko
+ 13:27:38 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 13:27:49 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 13:28:57 ssh,info publickey accepted for user: paramiko
+ 13:28:57 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 13:29:07 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 13:29:29 ssh,info publickey accepted for user: paramiko
+ 13:29:29 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+ 13:29:42 system,info,account user paramiko logged out from 10.10.13.4 via ssh
+ 13:29:50 system,info,account user admin logged out from 10.10.13.4 via winbox
+ 13:36:32 system,info,account user admin logged in from 10.10.13.4 via winbox
+ 13:41:36 ssh,info publickey accepted for user: paramiko
+ 13:41:36 system,info,account user paramiko logged in from 10.10.13.4 via ssh
+
