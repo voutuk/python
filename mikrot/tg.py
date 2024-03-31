@@ -1,6 +1,6 @@
 import paramiko, subprocess, telebot
 from secrets import username, token
-
+from telebot import types
 bot = telebot.TeleBot(token)
 
 ssh_client = paramiko.SSHClient()
@@ -140,17 +140,26 @@ def saveLOG():
     subprocess.run("cls", shell=True) 
 
 if __name__ == '__main__':
+    @bot.message_handler(commands=['start'])
+    def send_welcome(message):
+        markup = types.ReplyKeyboardMarkup()
+        item_blockip = types.KeyboardButton('/BlockIP')
+        item_unblockip = types.KeyboardButton('/UnblockIP')
+        firewallofff = types.KeyboardButton('/InternetOFF')
+        firewallonn = types.KeyboardButton('/InternetON')
+        markup.row(item_blockip, item_unblockip, firewallofff, firewallonn)
+        bot.send_message(message.chat.id, "Виберіть опцію:", reply_markup=markup)
 
-    @bot.message_handler(commands=['firewallON'])
+    @bot.message_handler(commands=['InternetON'])
     def firewallonn(message):
         RuleON(message.chat.id)
-    @bot.message_handler(commands=['firewallOFF'])
+    @bot.message_handler(commands=['InternetOFF'])
     def firewallofff(message):
         RuleOFF(message.chat.id)
-    @bot.message_handler(commands=['blockip'])
+    @bot.message_handler(commands=['BlockIP'])
     def handle_blockip(message):
         BlockIP(message)
-    @bot.message_handler(commands=['unblockip'])
+    @bot.message_handler(commands=['UnblockIP'])
     def handle_ubblockip(message):
         UNBlockIP(message)
     bot.polling()
