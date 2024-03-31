@@ -48,31 +48,65 @@ def EnableInt():
     input("-ENTER-")
     subprocess.run("cls", shell=True) 
 
-def BlockIP():
-    print("DHCP LIST: \n============================")
+def BlockIP(message):
+    # Отримання списку IP-адрес з DHCP
+    message_text = "DHCP LIST:\n============================\n"
     stdin, stdout, stderr = ssh_client.exec_command('ip dhcp-server/lease/print')
     for line in stdout:
-        print(line.strip('\n'))
-    print("\n============================")
-    blockIP = input("Enter ip[10.10.13.123]: ")
-    stdin, stdout, stderr = ssh_client.exec_command("/ip/firewall/address-list add address="+blockIP+" list=block")
-    for line in stdout:
-        print(line.strip('\n'))
-    input("-ENTER-")
-    subprocess.run("cls", shell=True) 
+        message_text += line.strip('\n') + "\n"
+    message_text += "\n============================\n"
 
-def UNBlockIP():
-    print("RULE LIST: \n============================")
+    # Надсилання списку IP-адрес у чат
+    bot.send_message(message.chat.id, message_text)
+
+    # Отримання IP-адреси для блокування
+    bot.send_message(message.chat.id, "Enter IP address [10.10.13.123]: ")
+    
+    # Очікування введення користувача
+    @bot.message_handler(func=lambda m: True)
+    def get_user_input(message):
+        user_input = message.text
+        
+        # Виконання команди для блокування IP-адреси
+        command = "/ip/firewall/address-list add address={} list=block".format(user_input)
+        print(command)
+        stdin, stdout, stderr = ssh_client.exec_command(command)
+        
+        # Отримання результату виконання команди
+        message_text = ""
+        for line in stdout:
+            message_text += line.strip('\n') + "\n"
+
+        if message_text:
+            bot.send_message(chat_id=message.chat.id, text=message_text)
+        else:
+            bot.send_message(chat_id=message.chat.id, text="Blocked IP")
+
+
+def UNBlockIP(message):
+    message_text = "RULE LIST:\n============================\n"
     stdin, stdout, stderr = ssh_client.exec_command('/ip/firewall/address-list print')
     for line in stdout:
-        print(line.strip('\n'))
-    print("\n============================")
-    UNblockIP = input("Enter #[0-1-2]: ")
-    stdin, stdout, stderr = ssh_client.exec_command("/ip/firewall/address-list remove numbers="+UNblockIP)
-    for line in stdout:
-        print(line.strip('\n'))
-    input("-ENTER-")
-    subprocess.run("cls", shell=True) 
+        message_text += line.strip('\n') + "\n"
+    message_text += "\n============================\n"
+
+    bot.send_message(message.chat.id, message_text)
+    bot.send_message(message.chat.id, "Enter #[0-1-2]: ")
+    
+    @bot.message_handler(func=lambda m: True)
+    def get_user_input(message):
+        user_input = message.text
+        
+        # Виконання команди для блокування IP-адреси
+        stdin, stdout, stderr = ssh_client.exec_command("/ip/firewall/address-list remove numbers={}".format(user_input))
+        message_text = ""
+        for line in stdout:
+            message_text += line.strip('\n') + "\n"
+
+        if message_text:
+            bot.send_message(chat_id=message.chat.id, text=message_text)
+        else:
+            bot.send_message(chat_id=message.chat.id, text="Unblocked IP")
 
 def addDNS():
     addDNS = input("Enter dns ip[1.1.1.1]: ")
@@ -82,19 +116,23 @@ def addDNS():
     input("-ENTER-")
     subprocess.run("cls", shell=True) 
 
-def RuleOFF():
+def RuleOFF(chat_id):
     stdin, stdout, stderr = ssh_client.exec_command("/ip/firewall/nat/ disable numbers=0")
-    for line in stdout:
-        print(line.strip('\n'))
-    input("-ENTER-")
-    subprocess.run("cls", shell=True) 
+    output_lines = [line.strip('\n') for line in stdout]
+    output_message = "\n".join(output_lines)
+    if output_message:
+        bot.send_message(chat_id=chat_id, text=output_message)
+    else:
+        bot.send_message(chat_id=chat_id, text="Firewall OFF")
 
-def RuleON():
+def RuleON(chat_id):
     stdin, stdout, stderr = ssh_client.exec_command("/ip/firewall/nat/ enable numbers=0")
-    for line in stdout:
-        print(line.strip('\n'))
-    input("-ENTER-")
-    subprocess.run("cls", shell=True) 
+    output_lines = [line.strip('\n') for line in stdout]
+    output_message = "\n".join(output_lines)
+    if output_message:
+        bot.send_message(chat_id=chat_id, text=output_message)
+    else:
+        bot.send_message(chat_id=chat_id, text="Firewall ON")
 
 def ping():
     print("\nРезультат:\n=====================================================================")
@@ -115,37 +153,17 @@ def saveLOG():
     subprocess.run("cls", shell=True) 
 
 if __name__ == '__main__':
-    # subprocess.run("cls", shell=True) 
-
-    # while (True):
-    #     print("1. Check internet\n2. Print user\n3. Add IP\n4. Add Gateway\n5. Enable Internet\n6. Add DNS\n7. Block IP")
-    #     print("8. Unblock IP")
-    #     print("9. Firewall Internet ON")
-    #     print("10. Firewall Internet OFF")
-    #     print("11. Save log file")
-    #     print("12. Exit")
-    #     temp = input("Виберіть опцію: ")
-    #     if(temp == "1"): ping()
-    #     elif(temp == "2"): user()
-    #     elif(temp == "3"): addIP()
-    #     elif(temp == "4"): addGateway()
-    #     elif(temp == "5"): EnableInt()
-    #     elif(temp == "6"): addDNS()
-    #     elif(temp == "7"): BlockIP()
-    #     elif(temp == "8"): UNBlockIP()
-    #     elif(temp == "9"): RuleON()
-    #     elif(temp == "10"): RuleOFF()
-    #     elif(temp == "11"): saveLOG()
-    #     elif(temp == "12"): 
-    #         ssh_client.close()
-    #         exit()
 
     @bot.message_handler(commands=['firewallON'])
-    def firewallon(message):
-        RuleON()
-        bot.send_message(message.chat.id, "Firewall ON")
+    def firewallonn(message):
+        RuleON(message.chat.id)
     @bot.message_handler(commands=['firewallOFF'])
-    def firewallon(message):
-        RuleON()
-        bot.send_message(message.chat.id, "Firewall ON")
+    def firewallofff(message):
+        RuleOFF(message.chat.id)
+    @bot.message_handler(commands=['blockip'])
+    def handle_blockip(message):
+        BlockIP(message)
+    @bot.message_handler(commands=['unblockip'])
+    def handle_ubblockip(message):
+        UNBlockIP(message)
     bot.polling()
