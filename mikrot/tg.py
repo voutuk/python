@@ -49,34 +49,22 @@ def EnableInt():
     subprocess.run("cls", shell=True) 
 
 def BlockIP(message):
-    # Отримання списку IP-адрес з DHCP
     message_text = "DHCP LIST:\n============================\n"
     stdin, stdout, stderr = ssh_client.exec_command('ip dhcp-server/lease/print')
     for line in stdout:
         message_text += line.strip('\n') + "\n"
     message_text += "\n============================\n"
-
-    # Надсилання списку IP-адрес у чат
     bot.send_message(message.chat.id, message_text)
 
-    # Отримання IP-адреси для блокування
     bot.send_message(message.chat.id, "Enter IP address [10.10.13.123]: ")
-    
-    # Очікування введення користувача
     @bot.message_handler(func=lambda m: True)
     def get_user_input(message):
         user_input = message.text
+        stdin, stdout, stderr = ssh_client.exec_command("/ip/firewall/address-list add address={} list=block".format(user_input))
         
-        # Виконання команди для блокування IP-адреси
-        command = "/ip/firewall/address-list add address={} list=block".format(user_input)
-        print(command)
-        stdin, stdout, stderr = ssh_client.exec_command(command)
-        
-        # Отримання результату виконання команди
         message_text = ""
         for line in stdout:
             message_text += line.strip('\n') + "\n"
-
         if message_text:
             bot.send_message(chat_id=message.chat.id, text=message_text)
         else:
@@ -97,7 +85,6 @@ def UNBlockIP(message):
     def get_user_input(message):
         user_input = message.text
         
-        # Виконання команди для блокування IP-адреси
         stdin, stdout, stderr = ssh_client.exec_command("/ip/firewall/address-list remove numbers={}".format(user_input))
         message_text = ""
         for line in stdout:
